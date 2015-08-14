@@ -17,7 +17,7 @@ $(function(){
 			$.ajax({
 				type:'POST',
 				url:'/movie/add',
-				data:data,
+				data:mdata,
 				success:function(data, textStatus){
 					if(data.success){
 						$("#msg").html('保存成功！');

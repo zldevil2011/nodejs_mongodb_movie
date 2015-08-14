@@ -16,8 +16,8 @@ exports.movieAdd = function(req, res){
 };
 
 exports.doMovieAdd = function(req, res){
-	// console.log(req.body);
-	var json = req.body.content;
+	console.log(req.body);
+	var json = req.body;
 	if(json._id){
 
 	}else{
