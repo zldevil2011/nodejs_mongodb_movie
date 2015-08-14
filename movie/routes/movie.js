@@ -16,5 +16,17 @@ exports.movieAdd = function(req, res){
 };
 
 exports.doMovieAdd = function(req, res){
-	res.send({'success':true});
-}
+	// console.log(req.body);
+	var json = req.body.content;
+	if(json._id){
+
+	}else{
+		Movie.save(json, function(err){
+			if(err){
+				res.send({'success':false, 'err':err});
+			}else{
+				res.send({'success':true});
+			}
+		});
+	}
+};

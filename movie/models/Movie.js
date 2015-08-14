@@ -23,4 +23,10 @@ var MovieSchema = new Schema({
 
 var Movie = mongodb.mongoose.model("Movie", MovieSchema);
 var MovieDAO = function(){};
+MovieDAO.prototype.save = function(obj, callback){
+	var instance = new Movie(obj);
+	instance.save(function(err){
+		callback(err);
+	});
+};
 module.exports = new MovieDAO();
